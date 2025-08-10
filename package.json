@@ -29,6 +29,7 @@
     "@nuxt/image": "1.10.0",
     "@nuxtjs/color-mode": "3.5.2",
     "@nuxtjs/i18n": "9.5.6",
+    "@nuxtjs/seo": "3.1.0",
     "@pinia/nuxt": "0.11.1",
     "@react-email/components": "^0.5.0",
     "@react-email/render": "^1.2.0",

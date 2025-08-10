@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/color-mode",
     "motion-v/nuxt",
+    "@nuxtjs/seo"
   ],
   shadcn: {
     prefix: "",
