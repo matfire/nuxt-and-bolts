@@ -1,22 +1,22 @@
-import type { Props as ResetPasswordProps } from "./templates/ResetPassword";
-import type { Props as WelcomeProps } from "./templates/Welcome";
 import { render } from "@react-email/render";
 import { createTransport } from "nodemailer";
-import ResetPasswordEmail from "~/lib/emails/compiled/templates/ResetPassword";
-
-import WelcomeEmail from "~/lib/emails/compiled/templates/Welcome";
 import { env } from "../env";
+import type { Props as ResetPasswordProps } from "./templates/ResetPassword";
+import type { Props as WelcomeProps } from "./templates/Welcome";
+
+import ResetPasswordEmail from "./compiled/templates/ResetPassword";
+import WelcomeEmail from "./compiled/templates/Welcome";
 
 const transport = createTransport({
   host: env.SMTP_HOST,
   port: env.SMTP_PORT,
   auth:
-    env.SMTP_USER && env.SMTP_PASSWORD
-      ? {
-          user: env.SMTP_USER,
-          pass: env.SMTP_PASSWORD,
-        }
-      : undefined,
+		env.SMTP_USER && env.SMTP_PASSWORD
+		  ? {
+		      user: env.SMTP_USER,
+		      pass: env.SMTP_PASSWORD,
+		    }
+		  : undefined,
 });
 
 const templates = {
