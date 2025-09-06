@@ -5,9 +5,8 @@ import "dotenv/config";
 export default defineConfig({
   out: "./app/lib/db/migrations",
   schema: "./app/lib/db/schema/index.ts",
-  dialect: "turso",
+  dialect: "postgresql",
   dbCredentials: {
     url: env.DATABASE_URL,
-    authToken: env.DATABASE_URL,
   },
 });
