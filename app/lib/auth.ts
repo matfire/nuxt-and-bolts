@@ -27,4 +27,21 @@ export const auth = betterAuth({
       );
     },
   },
+  databaseHooks: {
+    user: {
+      create: {
+        before: async (user, ctx) => {
+          if (!ctx || !ctx.context || !ctx.context.adapter) {
+            return { data: user };
+          }
+          const userCount = await ctx.context.adapter.count({ model: "user" });
+          if (userCount === 0) {
+            // first user is admin by default
+            return { data: { ...user, role: "admin" } };
+          }
+          return { data: user };
+        },
+      },
+    },
+  },
 });
