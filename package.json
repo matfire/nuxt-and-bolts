@@ -72,7 +72,6 @@
     "@types/pg": "^8.15.5",
     "@types/react": "^19.1.12",
     "@vue/test-utils": "^2.4.6",
-    "better-sqlite3": "^12.2.0",
     "concurrently": "^9.2.1",
     "dotenv": "^17.2.2",
     "drizzle-kit": "^0.31.4",
