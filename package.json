@@ -16,7 +16,7 @@
     "lint": "pnpm exec lint-staged",
     "lint:fix": "eslint . --fix --no-warn-ignored",
     "generate:ba-secret": "openssl rand -base64 32",
-    "generate:ba-migrations": "pnpm dlx @better-auth/cli generate && mv ./auth-schema.ts ./lib/db/schema/",
+    "generate:ba-migrations": "pnpm dlx @better-auth/cli generate && mv ./auth-schema.ts ./app/lib/db/schema/",
     "db:push": "drizzle-kit push",
     "prepare": "husky",
     "test": "vitest run",
