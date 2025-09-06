@@ -6,3 +6,13 @@ services:
     ports:
       - 8025:8025
       - 1025:1025
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: app
+    volumes:
+      - ./docker-data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

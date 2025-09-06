@@ -1,12 +1,16 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { admin } from "better-auth/plugins";
 import { db } from "./db"; // your drizzle instance
 import { sendEmail } from "./emails";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
-    provider: "sqlite", // or "mysql", "sqlite"
+    provider: "pg",
   }),
+  plugins: [
+    admin(),
+  ],
   emailAndPassword: {
     enabled: true,
     async sendResetPassword(data) {
